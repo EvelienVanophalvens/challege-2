@@ -5,18 +5,21 @@ import react, {useState} from 'react';
 
 const bookTile = (props) => {
   
-  const [shoppingCount, setCounter] = useState(0);
+  const [stockCount, setCounter] = useState(10);
 
-  function addBook (shoppingCount) {
-    setCounter((currentCounter) => currentCounter + 1 );
-    console.log (shoppingCount);
+  function addBook (stockCount) {
+    setCounter((currentCounter) => currentCounter - 1 );
+    console.log (stockCount);
   }
 
 
     return  (
         <View style={styles.bookTile}>
         <Text style={styles.bookTitle}>{props.title}</Text>
+        <View>
         <Text>{props.author}</Text>
+        <Text> {stockCount}</Text>
+        </View>
         <View style={styles.bookDescription}>
           <Text>{props.discription}</Text>
         </View>
@@ -27,7 +30,6 @@ const bookTile = (props) => {
                 <Text style={styles.button}>ADD</Text>
             </View>
           </TouchableNativeFeedback>
-          <Text>{shoppingCount}</Text>
         </View>
       </View>
     );
