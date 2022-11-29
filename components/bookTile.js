@@ -16,9 +16,12 @@ const bookTile = (props) => {
     return  (
         <View style={styles.bookTile}>
         <Text style={styles.bookTitle}>{props.title}</Text>
-        <View>
-        <Text>{props.author}</Text>
-        <Text> {stockCount}</Text>
+        <View style={styles.info}>
+          <Text>{props.author}</Text>
+          <View style={styles.stock}>
+            <Text>stock:</Text>
+            <Text> {stockCount}</Text>
+          </View>
         </View>
         <View style={styles.bookDescription}>
           <Text>{props.discription}</Text>
@@ -43,6 +46,17 @@ const bookTile = (props) => {
     bookDescription:{
       marginVertical: '2%',
   
+    },
+    info:{
+      display: 'flex',
+      marginVertical: '2%',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    stock:{
+      display: 'flex',
+      marginVertical: '2%',
+      flexDirection: 'row',
     },
     bookDetail:{
       display: 'flex',
