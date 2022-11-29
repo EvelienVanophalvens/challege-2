@@ -1,5 +1,9 @@
 import { StyleSheet, Text, View, TouchableNativeFeedback} from 'react-native';
 
+const addBook = (shoppingCount) => {
+  console.log ("h");
+}
+
 const bookTile = (props) => {
     return  (
         <View style={styles.bookTile}>
@@ -12,7 +16,7 @@ const bookTile = (props) => {
           <Text>{props.isbn}</Text>
           <TouchableNativeFeedback>
             <View>
-                <Text style={styles.button}>READ</Text>
+                <Text style={styles.button} onPress={addBook}>ADD</Text>
             </View>
           </TouchableNativeFeedback>
         </View>
