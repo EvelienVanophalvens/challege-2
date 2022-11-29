@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image,} from 'react-native';
 import BookTile from './components/bookTile'
 
 export default function App() {
+
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -12,7 +13,7 @@ export default function App() {
           style={styles.icon}
           source={require('./assets/shoppingCart.png')}
         />
-          <Text style={styles.shopCount}>1</Text>
+          <Text style={styles.shopCount}>0</Text>
         </View>
       </View>
       <BookTile title="Book title 1" author="by Some Random dude" discription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interger luctus, nulla sit amet pellentesque ultricies, mangna nisl vulputate urna, quis feugiat purus emin id ex." isbn="ISBN 978-8-2165-1860-1"/>

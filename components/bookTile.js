@@ -1,10 +1,18 @@
 import { StyleSheet, Text, View, TouchableNativeFeedback} from 'react-native';
 
-const addBook = (shoppingCount) => {
-  console.log ("h");
-}
+import react, {useState} from 'react';
+
 
 const bookTile = (props) => {
+  
+  const [shoppingCount, setCounter] = useState(0);
+
+  function addBook (shoppingCount) {
+    setCounter((currentCounter) => currentCounter + 1 );
+    console.log (shoppingCount);
+  }
+
+
     return  (
         <View style={styles.bookTile}>
         <Text style={styles.bookTitle}>{props.title}</Text>
@@ -14,11 +22,12 @@ const bookTile = (props) => {
         </View>
         <View style={styles.bookDetail}>
           <Text>{props.isbn}</Text>
-          <TouchableNativeFeedback>
+          <TouchableNativeFeedback onPress={addBook}>
             <View>
-                <Text style={styles.button} onPress={addBook}>ADD</Text>
+                <Text style={styles.button}>ADD</Text>
             </View>
           </TouchableNativeFeedback>
+          <Text>{shoppingCount}</Text>
         </View>
       </View>
     );
